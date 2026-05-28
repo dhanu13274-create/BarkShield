@@ -1,0 +1,15 @@
+import cv2
+import serial
+import time
+
+arduino = serial.Serial('COM3', 9600)
+time.sleep(2)
+
+prototxt = "MobileNetSSD_deploy.prototxt"
+model = "MobileNetSSD_deploy.caffemodel"
+
+net = cv2.dnn.readNetFromCaffe(prototxt, model)
+
+CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
+           "bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
+           "dog
